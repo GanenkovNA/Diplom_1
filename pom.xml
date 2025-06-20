@@ -13,6 +13,9 @@
         <maven.compiler.target>11</maven.compiler.target>
         <mockito.version>5.17.0</mockito.version>
         <jacoco.version>0.8.13</jacoco.version>
+        <!-- Указано для решения проблем с кодировкой -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
 
 
@@ -54,8 +57,9 @@
                 <configuration>
                     <!-- Добавлено для избавления от предупреждений о динамической загрузке агента -->
                     <argLine>
-                        -Xshare:off
                         -Djdk.attach.allowAttachSelf=true
+                        -javaagent:${settings.localRepository}/org/mockito/mockito-core/${mockito.version}/mockito-core-${mockito.version}.jar
+                        -javaagent:${settings.localRepository}/net/bytebuddy/byte-buddy-agent/1.15.11/byte-buddy-agent-1.15.11.jar
                         -javaagent:${settings.localRepository}/org/jacoco/org.jacoco.agent/${jacoco.version}/org.jacoco.agent-${jacoco.version}-runtime.jar=destfile=${project.build.directory}/jacoco.exec
                     </argLine>
                 </configuration>
@@ -72,6 +76,13 @@
                         <goals>
                             <goal>prepare-agent</goal>
                         </goals>
+                        <configuration>
+                            <excludes>
+                                <!-- Исключаем все классы, кроме Burger -->
+                                <exclude>**/*</exclude>
+                                <include>**/Burger*</include>
+                            </excludes>
+                        </configuration>
                     </execution>
                     <execution>
                         <id>check-coverage</id>
@@ -86,7 +97,7 @@
                                     <element>CLASS</element>
                                     <!-- Классы, к которым будет применяться правило -->
                                     <includes>
-                                        <include>**/praktikum/Burger</include>
+                                        <include>**/praktikum/Burger*</include>
                                     </includes>
                                     <limits>
                                         <!-- 100% покрытия строк -->
@@ -106,6 +117,12 @@
                         <goals>
                             <goal>report</goal>
                         </goals>
+                        <configuration>
+                            <!-- Ограничиваем отчёт только классом Burger -->
+                            <includes>
+                                <include>**/Burger*</include>
+                            </includes>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
