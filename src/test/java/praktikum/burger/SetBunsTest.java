@@ -5,12 +5,13 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 import praktikum.Bun;
+import praktikum.burger.base.BurgerTestBase;
 
 import static org.junit.Assert.assertSame;
 
 // Проверяем, устанавливается ли `Bun`
 @RunWith(MockitoJUnitRunner.class)
-public class SetBunsTest extends BurgerTestBase{
+public class SetBunsTest extends BurgerTestBase {
     @Mock
     Bun bunMock;
 

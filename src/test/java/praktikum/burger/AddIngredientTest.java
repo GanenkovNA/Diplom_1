@@ -5,12 +5,13 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 import praktikum.Ingredient;
+import praktikum.burger.base.BurgerTestBase;
 
 import static org.junit.Assert.*;
 
 //Проверяем, добавляются ли ингредиенты
 @RunWith(MockitoJUnitRunner.class)
-public class AddIngredientTest extends BurgerTestBase{
+public class AddIngredientTest extends BurgerTestBase {
     @Mock
     Ingredient ingredientMock;
 

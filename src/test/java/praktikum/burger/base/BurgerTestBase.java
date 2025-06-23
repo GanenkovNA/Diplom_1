@@ -1,4 +1,4 @@
-package praktikum.burger;
+package praktikum.burger.base;
 
 import praktikum.Burger;
 
