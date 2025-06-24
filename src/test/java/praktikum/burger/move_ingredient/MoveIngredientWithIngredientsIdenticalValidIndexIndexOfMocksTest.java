@@ -2,14 +2,14 @@ package praktikum.burger.move_ingredient;
 
 import org.junit.Test;
 import praktikum.Ingredient;
-import praktikum.burger.base.OperationsWithListOfMocksTestBase;
+import praktikum.burger.base.OperationsWithIngredientsListOfMocksTestBase;
 
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
 
-public class MoveIngredientWithIdenticalValidIndexIndexOfMocksTest extends OperationsWithListOfMocksTestBase {
+public class MoveIngredientWithIngredientsIdenticalValidIndexIndexOfMocksTest extends OperationsWithIngredientsListOfMocksTestBase {
 
     @Test
     public void shouldNotChangeList(){

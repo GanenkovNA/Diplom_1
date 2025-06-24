@@ -4,7 +4,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import praktikum.Ingredient;
-import praktikum.burger.base.OperationsWithListOfMocksTestBase;
+import praktikum.burger.base.OperationsWithIngredientsListOfMocksTestBase;
 
 import static org.junit.Assert.*;
 
@@ -19,9 +19,9 @@ import static org.junit.Assert.*;
  */
 
 @RunWith(Parameterized.class)
-public class RemoveIngredientWithValidIndexOfMocksTest extends OperationsWithListOfMocksTestBase {
+public class RemoveIngredientWithIngredientsValidIndexOfMocksTest extends OperationsWithIngredientsListOfMocksTestBase {
 
-    public RemoveIngredientWithValidIndexOfMocksTest(int index) {
+    public RemoveIngredientWithIngredientsValidIndexOfMocksTest(int index) {
         this.index = index;
     }
 

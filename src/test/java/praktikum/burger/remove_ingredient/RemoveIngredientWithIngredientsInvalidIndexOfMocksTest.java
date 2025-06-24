@@ -3,7 +3,7 @@ package praktikum.burger.remove_ingredient;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import praktikum.burger.base.OperationsWithListOfMocksTestBase;
+import praktikum.burger.base.OperationsWithIngredientsListOfMocksTestBase;
 
 /*
     Тест основан на КЭ и ГЗ.
@@ -13,9 +13,9 @@ import praktikum.burger.base.OperationsWithListOfMocksTestBase;
  */
 
 @RunWith(Parameterized.class)
-public class RemoveIngredientWithInvalidIndexOfMocksTest extends OperationsWithListOfMocksTestBase {
+public class RemoveIngredientWithIngredientsInvalidIndexOfMocksTest extends OperationsWithIngredientsListOfMocksTestBase {
 
-    public RemoveIngredientWithInvalidIndexOfMocksTest(int index) {
+    public RemoveIngredientWithIngredientsInvalidIndexOfMocksTest(int index) {
         this.index = index;
     }
 

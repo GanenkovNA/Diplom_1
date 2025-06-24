@@ -3,7 +3,7 @@ package praktikum.burger.move_ingredient;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import praktikum.burger.base.OperationsWithListOfMocksTestBase;
+import praktikum.burger.base.OperationsWithIngredientsListOfMocksTestBase;
 
 
 /*
@@ -14,10 +14,10 @@ import praktikum.burger.base.OperationsWithListOfMocksTestBase;
  */
 
 @RunWith(Parameterized.class)
-public class MoveIngredientWithInvalidIndexOfMocksTest extends OperationsWithListOfMocksTestBase {
+public class MoveIngredientWithIngredientsInvalidIndexOfMocksTest extends OperationsWithIngredientsListOfMocksTestBase {
     private final int newIndex;
 
-    public MoveIngredientWithInvalidIndexOfMocksTest(int index, int newIndex, String testName) {
+    public MoveIngredientWithIngredientsInvalidIndexOfMocksTest(int index, int newIndex, String testName) {
         this.index = index;
         this.newIndex = newIndex;
     }

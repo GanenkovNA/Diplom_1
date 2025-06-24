@@ -5,7 +5,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import praktikum.Ingredient;
 
-public class OperationsWithListOfMocksTestBase extends BurgerTestBase {
+public class OperationsWithIngredientsListOfMocksTestBase extends BurgerTestBase {
     @Mock
     Ingredient ingredientMock1;
     @Mock

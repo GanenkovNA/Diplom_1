@@ -4,7 +4,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import praktikum.Ingredient;
-import praktikum.burger.base.OperationsWithListOfMocksTestBase;
+import praktikum.burger.base.OperationsWithIngredientsListOfMocksTestBase;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertSame;
@@ -20,10 +20,10 @@ import static org.junit.Assert.assertSame;
  */
 
 @RunWith(Parameterized.class)
-public class MoveIngredientWithValidIndexOfMocksTest extends OperationsWithListOfMocksTestBase {
+public class MoveIngredientWithIngredientsValidIndexOfMocksTest extends OperationsWithIngredientsListOfMocksTestBase {
     private final int newIndex;
 
-    public MoveIngredientWithValidIndexOfMocksTest(int index, int newIndex, String testName) {
+    public MoveIngredientWithIngredientsValidIndexOfMocksTest(int index, int newIndex, String testName) {
         this.index = index;
         this.newIndex = newIndex;
     }
