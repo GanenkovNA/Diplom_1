@@ -1,4 +1,4 @@
-package praktikum.burger.remove_ingredient;
+package praktikum.burger.igredient.remove;
 
 import org.junit.Test;
 import praktikum.burger.base.BurgerTestBase;
@@ -7,7 +7,7 @@ import praktikum.burger.base.BurgerTestBase;
 public class RemoveIngredientFromEmptyListTest extends BurgerTestBase {
 
     @Test(expected = IndexOutOfBoundsException.class)
-    public void shouldThrowException() {
+    public void shouldThrowExceptionTest() {
         burger.removeIngredient(0);
     }
 }

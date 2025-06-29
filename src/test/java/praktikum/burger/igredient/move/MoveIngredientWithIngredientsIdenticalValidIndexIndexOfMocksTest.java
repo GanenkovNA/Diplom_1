@@ -1,4 +1,4 @@
-package praktikum.burger.move_ingredient;
+package praktikum.burger.igredient.move;
 
 import org.junit.Test;
 import praktikum.Ingredient;
@@ -12,7 +12,7 @@ import static org.junit.Assert.assertEquals;
 public class MoveIngredientWithIngredientsIdenticalValidIndexIndexOfMocksTest extends OperationsWithIngredientsListOfMocksTestBase {
 
     @Test
-    public void shouldNotChangeList(){
+    public void shouldNotChangeListTest(){
         index = 2;
 
         //Сохраняем элементы для сравнения

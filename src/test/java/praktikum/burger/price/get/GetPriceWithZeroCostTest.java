@@ -1,4 +1,4 @@
-package praktikum.burger.get_price;
+package praktikum.burger.price.get;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -28,7 +28,7 @@ public class GetPriceWithZeroCostTest extends OperationsWithBurgerIngredientsOfM
     }
 
     @Test
-    public void shouldHandleZeroPrices(){
+    public void shouldHandleZeroPricesTest(){
         when(bunMock.getPrice()).thenReturn(BUN_COST);
         when(ingredientMock1.getPrice()).thenReturn(INGREDIENT_COST);
 

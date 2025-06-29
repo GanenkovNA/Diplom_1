@@ -1,13 +1,11 @@
-package praktikum.burger.move_ingredient;
+package praktikum.burger.igredient.move;
 
+import org.assertj.core.api.SoftAssertions;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import praktikum.Ingredient;
 import praktikum.burger.base.OperationsWithIngredientsListOfMocksTestBase;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertSame;
 
 /*
     Тест основан на КЭ и ГЗ.
@@ -22,6 +20,7 @@ import static org.junit.Assert.assertSame;
 @RunWith(Parameterized.class)
 public class MoveIngredientWithIngredientsValidIndexOfMocksTest extends OperationsWithIngredientsListOfMocksTestBase {
     private final int newIndex;
+    private final SoftAssertions soft = new SoftAssertions();
 
     public MoveIngredientWithIngredientsValidIndexOfMocksTest(int index, int newIndex, String testName) {
         this.index = index;
@@ -45,14 +44,19 @@ public class MoveIngredientWithIngredientsValidIndexOfMocksTest extends Operatio
     }
 
     @Test
-    public void shouldMoveIngredientInList(){
+    public void shouldMoveIngredientInListTest(){
         // Сохраняем элементы для сравнения
         Ingredient movedIngredient = burger.ingredients.get(index);
         int initialSize = burger.ingredients.size();
 
         burger.moveIngredient(index, newIndex);
 
-        assertEquals("Количество элементов в списке должно остаться неизменным", initialSize, burger.ingredients.size());
-        assertSame("Ингредиент должен быть в списке", movedIngredient, burger.ingredients.get(newIndex));
+        soft.assertThat(burger.ingredients.size())
+                .as("Количество элементов в списке должно остаться неизменным")
+                .isEqualTo(initialSize);
+        soft.assertThat(burger.ingredients.get(newIndex))
+                .as("Ингредиент должен быть в списке")
+                .isSameAs(movedIngredient);
+        soft.assertAll();
     }
 }

@@ -1,4 +1,4 @@
-package praktikum.burger.move_ingredient;
+package praktikum.burger.igredient.move;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -34,7 +34,7 @@ public class MoveIngredientWithIngredientsInvalidIndexOfMocksTest extends Operat
     }
 
     @Test(expected = IndexOutOfBoundsException.class)
-    public void shouldThrowException() {
+    public void shouldThrowExceptionTest() {
         burger.moveIngredient(index, newIndex);
     }
 }

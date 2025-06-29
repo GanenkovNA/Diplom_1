@@ -16,7 +16,7 @@ public class SetBunsTest extends BurgerTestBase {
     Bun bunMock;
 
     @Test
-    public void shouldSetBunCorrectly(){
+    public void shouldSetBunCorrectlyTest(){
         burger.setBuns(bunMock);
         assertSame(bunMock, burger.bun);
     }

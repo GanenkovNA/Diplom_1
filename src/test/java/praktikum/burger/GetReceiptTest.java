@@ -25,7 +25,7 @@ public class GetReceiptTest extends OperationsWithBurgerIngredientsOfMocksTestBa
     private String expectedReceipt;
 
     @Test
-    public void shouldReturnReceiptForBurgerWithBunOnly(){
+    public void shouldReturnReceiptForBurgerWithBunOnlyTest(){
         expectedReceipt = new ReceiptBuilder()
                 .withBun(BUN_NAME, BUN_COST)
                 .build();
@@ -37,7 +37,7 @@ public class GetReceiptTest extends OperationsWithBurgerIngredientsOfMocksTestBa
     }
 
     @Test
-    public void shouldReturnReceiptForBurgerWithOnlyIngredient(){
+    public void shouldReturnReceiptForBurgerWithOnlyIngredientTest(){
         expectedReceipt = new ReceiptBuilder()
                 .withBun(BUN_NAME, BUN_COST)
                 .withIngredient(INGREDIENT1_TYPE, INGREDIENT1_NAME, INGREDIENT1_COST)
@@ -56,7 +56,7 @@ public class GetReceiptTest extends OperationsWithBurgerIngredientsOfMocksTestBa
     }
 
     @Test
-    public void shouldReturnReceiptForBurgerWithIngredients(){
+    public void shouldReturnReceiptForBurgerWithIngredientsTest(){
         expectedReceipt = new ReceiptBuilder()
                 .withBun(BUN_NAME, BUN_COST)
                 .withIngredient(INGREDIENT1_TYPE, INGREDIENT1_NAME, INGREDIENT1_COST)

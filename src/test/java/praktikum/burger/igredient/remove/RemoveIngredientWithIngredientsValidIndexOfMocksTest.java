@@ -1,12 +1,11 @@
-package praktikum.burger.remove_ingredient;
+package praktikum.burger.igredient.remove;
 
+import org.assertj.core.api.SoftAssertions;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import praktikum.Ingredient;
 import praktikum.burger.base.OperationsWithIngredientsListOfMocksTestBase;
-
-import static org.junit.Assert.*;
 
 /*
     Тест основан на КЭ и ГЗ.
@@ -20,6 +19,7 @@ import static org.junit.Assert.*;
 
 @RunWith(Parameterized.class)
 public class RemoveIngredientWithIngredientsValidIndexOfMocksTest extends OperationsWithIngredientsListOfMocksTestBase {
+    private final SoftAssertions soft = new SoftAssertions();
 
     public RemoveIngredientWithIngredientsValidIndexOfMocksTest(int index) {
         this.index = index;
@@ -31,15 +31,19 @@ public class RemoveIngredientWithIngredientsValidIndexOfMocksTest extends Operat
     }
 
     @Test
-    public void shouldRemoveIngredient(){
+    public void shouldRemoveIngredientTest(){
         // Сохраняем элементы для сравнения
         Ingredient ingredientForAssertion = burger.ingredients.get(index);
         int initialSize = burger.ingredients.size();
 
         burger.removeIngredient(index);
 
-        assertEquals("Количество элементов в списке должно было уменьшиться на 1", initialSize - 1, burger.ingredients.size());
-        assertTrue("Ингредиент должен был быть удалён из списка",
-                burger.ingredients.stream().noneMatch(element -> element == ingredientForAssertion));
+        soft.assertThat(burger.ingredients.size())
+                .as("Количество элементов в списке должно было уменьшиться на 1")
+                .isEqualTo(initialSize - 1);
+        soft.assertThat(burger.ingredients.stream().noneMatch(element -> element == ingredientForAssertion))
+                .as("Ингредиент должен был быть удалён из списка")
+                .isTrue();
+        soft.assertAll();
     }
 }

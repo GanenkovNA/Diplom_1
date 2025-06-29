@@ -1,4 +1,4 @@
-package praktikum.burger.get_price;
+package praktikum.burger.price.get;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -21,13 +21,13 @@ public class GetPriceTest extends OperationsWithBurgerIngredientsOfMocksTestBase
 
     //Бургер только с булочкой
     @Test
-    public void shouldReturnBunPriceMultipliedByTwo() {
+    public void shouldReturnBunPriceMultipliedByTwoTest() {
         assertEquals(BUN_COST * 2, burger.getPrice(), 0.001);
     }
 
     //Бургер с булочкой и одним ингредиентом
     @Test
-    public void shouldIncludeIngredientPrice() {
+    public void shouldIncludeIngredientPriceTest() {
         burger.addIngredient(ingredientMock1);
 
         assertEquals(BUN_COST * 2 + INGREDIENT1_COST, burger.getPrice(), 0.001);
@@ -35,7 +35,7 @@ public class GetPriceTest extends OperationsWithBurgerIngredientsOfMocksTestBase
 
     //Бургер с несколькими ингредиентами
     @Test
-    public void shouldSumAllIngredients(){
+    public void shouldSumAllIngredientsTest(){
         burger.addIngredient(ingredientMock1);
         burger.addIngredient(ingredientMock2);
 

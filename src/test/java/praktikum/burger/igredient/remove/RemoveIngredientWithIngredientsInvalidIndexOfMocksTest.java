@@ -1,4 +1,4 @@
-package praktikum.burger.remove_ingredient;
+package praktikum.burger.igredient.remove;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -25,7 +25,7 @@ public class RemoveIngredientWithIngredientsInvalidIndexOfMocksTest extends Oper
     }
 
     @Test(expected = IndexOutOfBoundsException.class)
-    public void shouldThrowException() {
+    public void shouldThrowExceptionTest() {
         burger.removeIngredient(index);
     }
 }
